@@ -1,5 +1,6 @@
 package com.LibraryMS.BookIssueDeal.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
@@ -32,11 +33,11 @@ public class Student {
     private String phoneNumber;
 
     @OneToMany(mappedBy = "student")
-    @JsonIgnoreProperties(value = "student")
+    @JsonBackReference
     private List<Book> bookList;
 
     @OneToMany(mappedBy = "student")
-    @JsonIgnoreProperties(value = "student")
+    @JsonBackReference
     private List<Transaction> transactionList;
 
     @CreationTimestamp

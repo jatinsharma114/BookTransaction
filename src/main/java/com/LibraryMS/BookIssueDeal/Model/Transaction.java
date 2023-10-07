@@ -1,6 +1,6 @@
 package com.LibraryMS.BookIssueDeal.Model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -31,12 +31,12 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn
-    @JsonIgnoreProperties(value = "transactionList")
+    @JsonBackReference
     private Student student;
 
     @ManyToOne
     @JoinColumn
-    @JsonIgnoreProperties(value = "transactionList")
+    @JsonBackReference
     private Book book;
 
     @CreationTimestamp

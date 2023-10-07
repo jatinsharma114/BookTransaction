@@ -116,8 +116,8 @@ public class TransactionService {
         }
 
         List<Transaction> issueTxns = transactionRepository
-                .findByBookAndStudentAndTransactionTypeOrderByIdDesc(
-                        book, student, TransactionType.ISSUE);
+                                        .findByBookAndStudentAndTransactionTypeOrderByIdDesc(
+                                                            book, student, TransactionType.ISSUE);
 
         Transaction issueTxn = issueTxns.get(0);
 

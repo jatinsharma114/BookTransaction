@@ -1,6 +1,7 @@
 package com.LibraryMS.BookIssueDeal.Controller;
 
 import com.LibraryMS.BookIssueDeal.Model.Book;
+import com.LibraryMS.BookIssueDeal.Model.Genre;
 import com.LibraryMS.BookIssueDeal.RequestController.BookRequest;
 import com.LibraryMS.BookIssueDeal.Service.BookService;
 import jakarta.validation.Valid;
@@ -29,6 +30,11 @@ public class BookController {
     @GetMapping("/book/{bookId}")
     public Book getStudent(@PathVariable("bookId") int bookId){
         return bookService.getBookById(bookId);
+    }
+
+    @GetMapping("/bookByGenre/{genre}")
+    public List<Book> getBooksByGenre(@PathVariable("genre") String genre) {
+        return bookService.getBookByGenre(genre);
     }
 
 }

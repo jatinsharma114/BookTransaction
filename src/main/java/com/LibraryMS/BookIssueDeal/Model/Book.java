@@ -1,6 +1,7 @@
 package com.LibraryMS.BookIssueDeal.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -28,16 +29,16 @@ public class Book {
 
     @ManyToOne
     @JoinColumn
-    @JsonIgnoreProperties(value = "bookList")
+    @JsonManagedReference
     private Author myAuthor;
 
     @ManyToOne
     @JoinColumn
-    @JsonIgnoreProperties(value = "bookList")
+    @JsonManagedReference
     private Student student;
 
     @OneToMany(mappedBy = "book")
-    @JsonIgnoreProperties(value = "book")
+    @JsonManagedReference
     private List<Transaction> transactionList;
 
     @CreationTimestamp
