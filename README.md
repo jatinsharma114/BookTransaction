@@ -10,3 +10,10 @@
 - Note: This is not Secure APIs & there is no spring security used.
 
 Work In progress and adding more APi's for better use cases;
+
+
+To Run this Application : 
+Ru the application By cloning Repo. it and then If you want to use the Docker Engine,
+- You can Use and Run: the MySQL and Speingbot application container on the Same Network Interface. 
+You can use the docker-compose up command to Run the container. 
+Make sure first that you have a New Connection to MySQL DB which is mapped to port 3307.
