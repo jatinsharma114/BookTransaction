@@ -1,3 +1,3 @@
-FROM openjdk:17
+FROM openjdk
 COPY target/app.jar app.jar
 CMD ["java", "-jar", "app.jar"]
